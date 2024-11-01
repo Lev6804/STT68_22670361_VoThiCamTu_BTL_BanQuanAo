@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery-3.7.1.min.js"></script>
+    <script src="./assets/js/login.js"></script>
+</head>
+<body>
+    <div class="login__main">
+        <header class="header__login" style="background-color: rgb(241, 146, 31)">
+            <div class="grid">
+                <div class="header__nav-login" style="background-color: rgb(241, 146, 31)">
+                    <div class="header__logo-login">
+                        <a href="">
+                            <img src="./assets/img/Logo1.png" alt="" class="header__logo-img-login">
+                        </a>
+                    </div>
+                    <div class="header__help-login">
+                        <a href="" class="header__link-login" style="color: azure;">Bạn cần trợ giúp?</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+
+        <div class="login__container" style="background-color: white;">
+            <div class="grid">
+                <div class="row">
+                    <div class="col-lg-6 d-lg-block d-sm-none d-none">
+                        <img src="./assets/img/Logo2.png" alt=""   width="500px" height="500px"> 
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col d-sm-flex justify-content-sm-center pt-3 pb-3" >
+                        <div class="modal-inner" >
+                            <!-- form register -->
+                            <div class="auth-form auth-form-register auth-form-register-main" style="background-color: rgb(241, 146, 31);">
+                                <div class="auth-form__container" >
+                                    <div class="auth-form__header">
+                                        <h3 class="auth-form__heading" style="color: azure">Đăng ký</h3>
+                                        <span class="auth-form__switch-btn" onclick="displayLogininRegister();"style="color: azure">Đăng nhập</span>
+                                    </div>
+                    
+                                    <div class="auth-form__form" >
+                                        <div class="auth-form__group">
+                                            <input type="email" class="auth-form__input" id="emailR" placeholder="Nhập email">
+                                        </div>
+                                        <div class="auth-form__group">
+                                            <input type="text" class="auth-form__input" id="nameR" placeholder="Nhập tên đăng nhập">
+                                        </div>
+                                        <div class="auth-form__group">
+                                            <input type="password" class="auth-form__input" id="passR" placeholder="Nhập mật khẩu">
+                                        </div>
+                                        <div class="auth-form__group">
+                                            <input type="password" class="auth-form__input" id="repassR" placeholder="Nhập lại mật khẩu">
+                                        </div>
+                                    </div>
+                    
+                                    <div class="auth-form__policy" >
+                                        <p class="auth-form__policy-text">
+                                            Bằng việc đăng ký, bạn đã đồng ý với Shop về
+                                            <a href="" class="auth-form__policy-link" style="color: azure">Điều khoản dịch vụ </a>&
+                                            <a href="" class="auth-form__policy-link" style="color: azure">Chính sách bảo mật</a>
+                                        </p>
+                                    </div>
+                    
+                                    <div class="auth-form__control">
+                                        <button class="btn btn--primary btnRegister" style="background-color: azure;color: rgb(241, 146, 31)">ĐĂNG KÝ</button>
+                                    </div>
+                                </div>
+                    
+                                <div class="auth-form__socials">
+                                    <a href="https://www.facebook.com/" class="btn btn--size-s btn--with-icon btn--facebook">
+                                        <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
+                                        <span class="auth-form__socials-text">Kết nối với Facebook</span>
+                                    </a>
+                                    <a href="https://www.google.com/" class="btn btn--size-s btn--with-icon btn--google">
+                                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                                        <span class="auth-form__socials-text">Kết nối với Google</span>
+                                    </a>
+                                </div>
+                            </div> 
+                        
+                            <!-- form login -->
+                            <div class="auth-form auth-form-login auth-form-login-main" style="background-color: rgb(241, 146, 31);">
+                                <div class="auth-form__container">
+                                    <div class="auth-form__header">
+                                        <h3 class="auth-form__heading" style="color: azure">Đăng nhập</h3>
+                                        <span class="auth-form__switch-btn" onclick="displayRegisterinLogin();" style="color: azure">Đăng ký</span>
+                                    </div>
+                    
+                                    <div class="auth-form__form">
+                                        <div class="auth-form__group">
+                                            <input type="text" class="auth-form__input" id="name" placeholder="Nhập tên đăng nhập">
+                                        </div>
+                                        <div class="auth-form__group">
+                                            <input type="password" class="auth-form__input" id="password" placeholder="Nhập mật khẩu">
+                                        </div>
+                                    </div>
+                    
+                                    <div class="auth-form__policy">
+                                        <div class="auth-form__help">
+                                            <a href="" class="auth-form__help-link auth-form__forgot" style="color: azure">Quên mật khẩu</a>
+                                            <span class="auth-form__separate"></span>
+                                            <a href="" class="auth-form__help-link auth-form__needed" style="color: azure">Cần trợ giúp?</a>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="auth-form__control">
+                                        <button class="btn btn--primary btnLogin" style="background-color: azure;color: rgb(241, 146, 31)">ĐĂNG NHẬP</button>
+                                    </div>
+                                </div>
+                    
+                                <div class="auth-form__socials">
+                                    <a href="https://www.facebook.com/" class="btn btn--size-s btn--with-icon btn--facebook">
+                                        <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
+                                        <span class="auth-form__socials-text">Kết nối với Facebook</span>
+                                    </a>
+                                    <a href="https://www.google.com/" class="btn btn--size-s btn--with-icon btn--google">
+                                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                                        <span class="auth-form__socials-text">Kết nối với Google</span>
+                                    </a>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="grid">
+                <div class="row footer__top" >
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start " >
+                        <div>
+                            <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Trung tâm trợ giúp</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">TickID Mall</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Hướng dẫn mua hàng</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Về TickID</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Giới thiệu về TickID Việt Nam</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Tuyển dụng</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Điều khoản TickID</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Theo dõi chúng tôi</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-facebook"></i>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-square-instagram"></i>
+                                        Instagram
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-linkedin"></i>
+                                        LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Ứng dụng</h3>
+                            <img src="./assets/img/img_qr.png" alt="" class="footer__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="grid">
+                    <div class="row">
+                        <p class="footer__text">© 2024-Bản quyền</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Message -->
+    <div id="liveToast">
+        <div class="d-flex">
+            <div class="toast-body" id="toastText">
+                Test Toast Message
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" aria-label="Close"></button>
+        </div>
+    </div>
+</body>
+<script>
+    // Nhấn enter để đăng ký hoặc đăng nhập
+    document.onkeypress=function(e){
+        if(e.which==13){
+            var login=document.querySelector(".auth-form-login");
+            var register=document.querySelector(".auth-form-register");
+            if(register.style.display=="block" ){
+                document.querySelector(".btnRegister").click();
+            }
+            else{
+                document.querySelector(".btnLogin").click();
+            }
+        }
+    }
+
+    //Đóng toast message
+    $(".btn-close").click(()=>{
+        $("#liveToast").css("display","none");
+    });
+
+    //Kiểm tra dữ liệu trong đăng ký
+    $("#emailR").blur(()=>{
+        var regex=/^[a-zA-Z0-9]+@gmail.com$/;
+        var email=$("#emailR").val();
+        if(!regex.test(email)){
+            $("#toastText").text("Email không hợp lệ");
+            $("#liveToast").css("background-color","#dc3545");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            $("#emailR").css("border-color","#dc3545");
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        }
+        else {
+            $("#emailR").css("border-color","#00A86B");
+        }
+    })
+
+    $("#nameR").blur(()=>{
+        var regex=/^[a-zA-Z0-9]+$/;
+        var name=$("#nameR").val();
+        if(!regex.test(name)){
+            $("#toastText").text("Tên đăng nhập không có ký tự đặc biệt");
+            $("#liveToast").css("background-color","#dc3545");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            $("#nameR").css("border-color","#dc3545");
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        }
+        else{
+            $("#nameR").css("border-color","#00A86B");
+        }
+    })
+
+    $("#passR").blur(()=>{
+        var regex=/^[a-z0-9A-Z]{6,}$/;
+        var pass=$("#passR").val();
+        if(!regex.test(pass)){
+            $("#toastText").text("Mật khẩu ít nhất 6 ký tự");
+            $("#liveToast").css("background-color","#dc3545");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            $("#passR").css("border-color","#dc3545");
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        }
+        else{
+            $("#passR").css("border-color","#00A86B");
+        }
+    })
+
+    $("#repassR").blur(()=>{
+        var pass=$("#passR").val();
+        var repass=$("#repassR").val();
+        if(pass!=repass){
+            $("#toastText").text("Mật khẩu không đúng");
+            $("#liveToast").css("background-color","#dc3545");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            $("#repassR").css("border-color","#dc3545");
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        }
+        else if(pass=="" || repass==""){
+            $("#toastText").text("Vui lòng nhập mật khẩu");
+            $("#liveToast").css("background-color","#dc3545");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            $("#repassR").css("border-color","#dc3545");
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        }
+        else{
+            $("#repassR").css("border-color","#00A86B");
+        }
+    })
+
+    $(".btnRegister").click(()=>{
+        $("#emailR").blur();
+        $("#nameR").blur();
+        $("#passR").blur();
+        $("#repassR").blur();
+        if( $("#emailR").val()!="" &&  $("#nameR").val()!="" &&  
+        $("#passR").val()!="" &&  $("#repassR").val()!="" && $("#passR").val()==$("#repassR").val()){
+            var user={
+                email: $("#emailR").val(),
+                name: $("#nameR").val(),
+                password: $("#passR").val(),
+                re_password: $("#repassR").val()
+            };
+            var json=JSON.stringify(user);
+            localStorage.setItem("username",json);
+            $("#toastText").text("Đăng ký thành công");
+            $("#liveToast").css("background-color","#00A86B");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            displayLogininRegister();
+
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        
+            $("#emailR").val(""); $("#nameR").val("");
+            $("#passR").val(""); $("#repassR").val("");
+
+            $("#nameR").css("border-color","#dbdbdb");
+            $("#emailR").css("border-color","#dbdbdb");
+            $("#passR").css("border-color","#dbdbdb");
+            $("#repassR").css("border-color","#dbdbdb");
+        }
+        else if($("#passR").val()!=$("#repassR").val() && $("#passR").val()!="" &&  $("#repassR").val()!=""){
+            $("#toastText").text("Mật khẩu không đúng");
+            $("#liveToast").css("background-color","#dc3545");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            $("#repassR").css("border-color","#dc3545");
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        }
+        else{
+            $("#toastText").text("Nhập đầy đủ thông tin");
+            $("#liveToast").css("background-color","#dc3545");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        }
+    })
+
+    // Kiểm tra dữ liệu trong đăng nhập
+    $(".btnLogin").click(()=>{
+        var name=$("#name").val();
+        var pass=$("#password").val();
+
+        if(name!="" && pass!=""){
+            if(localStorage.getItem("username")!=null){
+                var user=JSON.parse(localStorage.getItem("username"));
+                if(user.name==name && user.password==pass){
+                    window.location.href="./assets/html/home.html";
+                }
+                else{
+                    $("#toastText").text("Tài khoản không tồn tại");
+                    $("#liveToast").css("background-color","#dc3545");
+                    $("#liveToast").css("animation","slideInLeft ease 0.5s");
+                    $("#liveToast").css("display","block");
+                    setTimeout(()=>{
+                        $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+                    },600);
+                }
+            }
+            else{
+                $("#toastText").text("Tài khoản không tồn tại");
+                $("#liveToast").css("background-color","#dc3545");
+                $("#liveToast").css("animation","slideInLeft ease 0.5s");
+                $("#liveToast").css("display","block");
+                setTimeout(()=>{
+                    $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+                },600);
+            }
+        }
+        else{
+            $("#toastText").text("Nhập đầy đủ thông tin");
+            $("#liveToast").css("background-color","#dc3545");
+            $("#liveToast").css("animation","slideInLeft ease 0.5s");
+            $("#liveToast").css("display","block");
+            setTimeout(()=>{
+                $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+            },600);
+        }
+    })
+</script>
+</html>

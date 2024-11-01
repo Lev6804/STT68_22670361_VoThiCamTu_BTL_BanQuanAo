@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài Khoản</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../font/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/myaccount.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="main__account">
+        <header class="header">
+            <div class="grid" style="background-color: rgb(241, 146, 31);">
+
+                <!-- navigation -->
+                <nav class="header__navbar hide-on-mobile-tablet">
+
+                    <!-- nav top-left -->
+                    <ul class="header__list">
+                        <li class="header__item header__item--separate header__item--qr">
+                            Vào cửa hàng trên ứng dụng
+                            <div class="header__qr">
+                                <img src="../img/img_qr.png" alt="QR" class="header__qr-img">
+                            </div>
+                        </li>
+                        <li class="header__item">
+                            <span class="header__item--nopacity">Kết nối</span>
+                            <a href="https://www.facebook.com/" class="header__navbar-icon">
+                                <i class="fa-brands fa-facebook header__icon-link"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="header__navbar-icon">
+                                <i class="fa-brands fa-instagram header__icon-link"></i>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <!-- nav top-right -->
+                    <ul class="header__list">
+                        <li class="header__item header__item--notify">
+                            <a href="" class="header__link">
+                                <i class="fa-solid fa-heart header__icon-link"></i>
+                                Yêu thích
+                            </a>
+
+                            <!-- display notify -->
+                            <!-- header__cart-list--no-cart 
+                                thêm class trên thì sẽ hiển thị giỏ hàng trống
+                            -->
+                            <div class="header__notify">
+                                <img src="../img/no_cart.png" alt="" class="header__no-cart-img">
+                                <p class="header__no-cart-msg">Chưa có sản phẩm</p>
+
+                                <header class="header__notify-title">
+                                    <h3>Sản phẩm yêu thích</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="../html/favourite.html" class="header__notify-btn">Xem tất cả</a>
+                                </footer>
+                            </div>
+                        </li>
+                        <li class="header__item">
+                            <a href="" class="header__link">
+                                <i class="fa-regular fa-circle-question header__icon-link"></i>
+                                Trợ giúp
+                            </a>
+                        </li>
+
+                        <!-- display register and login -->
+                        <!-- <li class="header__item header__item--register">
+                            <a href="#modal" class="header__link header__link--bold header__link--separate"
+                            onclick="displayRegister();">
+                                Đăng ký
+                            </a>
+                        </li>
+                        <li class="header__item header__item--login">
+                            <a href="#modal" class="header__link header__link--bold"
+                            onclick="displayLogin();">
+                                Đăng nhập
+                            </a>
+                        </li> -->
+
+                        <!-- display user -->
+                        <li class="header__item header__item-user">
+                            <img src="../img/img_qr.png" alt="" class="header__item-user-img">
+                            <span class="header__item-user-name">Cẩm Tú</span>
+
+                            <ul class="header__item-user-menu">
+                                <li class="header__item-user-item">
+                                    <a href="../html/home.html">Trang chủ</a>
+                                </li>
+                                <li class="header__item-user-item">
+                                    <a href="../html/boughtProduct.html">Đơn mua</a>
+                                </li>
+                                <li class="header__item-user-item">
+                                    <a href="../html/introduce.html">Giới thiệu</a>
+                                </li>
+                                <li class="header__item-user-item">
+                                    <a href="../../index.html">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Search -->
+                <div class="header__with-search">
+                    <label for="mobileSearch" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+
+                    <input type="checkbox" hidden id="mobileSearch">
+
+                    <div class="header__logo hide-on-tablet">
+                        <a href="../html/home.html">
+                            <img src="../img/Logo1_white.png" alt="" class="header__logo-img" height="135px">
+                        </a>
+                    </div>
+
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm" onclick="displaySearchHistory();">
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                                <ul class="header__search-history-list">
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="header__search-select">
+                            <span class="header__search-select-label">Trong shop</span>
+                            <i class="header__search-select-icon fa-solid fa-angle-down"></i>
+                            <ul class="header__search-option">
+                                <li class="header__search-item">
+                                    <span class="header__search-text">Trong shop</span>
+                                    <i class="header__search-icon fa-solid fa-check"></i>
+                                </li>
+                                <li class="header__search-item">
+                                    <span class="header__search-text">Ngoài shop</span>
+                                    <i class="header__search-icon fa-solid fa-check"></i>
+                                </li>
+                            </ul>
+                        </div> -->
+                        <button class="header__search-btn" onclick="pageSearchProduct();">
+                            <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <div class="header__cart">
+                        <div class="header__cart-wrap">
+                            <i class="header__cart-icon fa-solid fa-cart-shopping"></i>
+                            <span class="header__cart-notice"></span>
+                            <!-- header__cart-list--no-cart 
+                                thêm class trên thì sẽ hiển thị giỏ hàng trống
+                            -->
+                            <div class="header__cart-list">
+                                <img src="../img/no_cart.png" alt="" class="header__no-cart-img">
+                                <p class="header__no-cart-msg">Chưa có sản phẩm</p>
+
+                                <h4 class="header__cart-title">Sản phẩm đã thêm</h4>
+                                <ul class="header__cart-list-buy">
+                                </ul>
+                                <a href="../html/products.html" class="header__cart-view btn btn--primary">Xem giỏ hàng</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Display menu on mobile and tablet -->
+                    <div class="header__menu-mobile">
+                        <label for="header__menu-mobile-check">
+                            <i class="fa-solid fa-bars header__menu-mobile-icon"></i>
+                        </label>
+                        <input type="checkbox" hidden id="header__menu-mobile-check">
+
+                        <label for="header__menu-mobile-check" class="header__menu-mobile-over"></label>
+
+                        <div class="header__menu-mobile-list-wrapper">
+                            <label for="header__menu-mobile-check">
+                                <i class="fa-solid fa-xmark header__menu-close-icon"></i>
+                            </label>
+                            <ul class="header__menu-mobile-list">
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/home.html" class="header__menu-mobile-link">Trang chủ</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/introduce.html" class="header__menu-mobile-link">Giới thiệu</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/boughtProduct.html" class="header__menu-mobile-link">Đơn mua</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/favourite.html" class="header__menu-mobile-link">Yêu thích</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../../index.html" class="header__menu-mobile-link">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display sort bar mobile and tablet -->
+            <!-- <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Phổ biến</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul> -->
+        </header>
+
+        <div class="container__account">
+            <div class="grid content__account">
+                <div class="row content__account-title">
+                    <div class="col">
+                        <h2 class="content__account-title-heading">Hồ Sơ Của Tôi</h2>
+                        <h3 class="content__account-title-sub">Quản lý thông tin hồ sơ để bảo mật tài khoản</h3>
+                    </div>
+                </div>
+                <div class="row content__account-form">
+                    <div class="col-lg-10 col-12 form">
+                            <div class="row form__group">
+                                <div class="col-3 form__label">
+                                    <label for="signin" class="form__label-text">Tên đăng nhập</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" id="signin" class="form__text">
+                                </div>
+                            </div>
+                            <div class="row form__group">
+                                <div class="col-3 form__label">
+                                    <label for="name" class="form__label-text">Tên</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" id="name" class="form__text">
+                                </div>
+                            </div>
+                            <div class="row form__group">
+                                <div class="col-3 form__label">
+                                    <label for="email__account" class="form__label-text">Email</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="email" id="email__account" class="form__text">
+                                </div>
+                            </div>
+                            <div class="row form__group">
+                                <div class="col-3 form__label">
+                                    <label for="phone" class="form__label-text">Số điện thoại</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="tel" id="phone" class="form__text">
+                                </div>
+                            </div>
+                            <div class="row form__group">
+                                <div class="col-3 form__label">
+                                    <label class="form__label-text">Giới tính</label>
+                                </div>
+                                <div class="col-9 gender__wrapper">
+                                    <div class="radio__gender">
+                                        <input type="radio" id="male" name="gender" class="radio__active" value="Nam">
+                                        <label for="male" class="form__radio" name="gender">Nam</label>
+                                    </div>
+                                    <div class="radio__gender">
+                                        <input type="radio" id="female" name="gender" class="radio__active" value="Nữ">
+                                        <label for="female" class="form__radio" name="gender">Nữ</label>
+                                    </div>
+                                    <div class="radio__gender">
+                                        <input type="radio" id="other" name="gender" class="radio__active" value="Khác">
+                                        <label for="other" class="form__radio" name="gender">Khác</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row form__group">
+                                <div class="col-3 form__label">
+                                    <label for="date" class="form__label-text">Ngày sinh</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="date" id="date" class="form__text">
+                                </div>
+                            </div>
+                            <div class="row d-lg-none d-flex justify-content-end d-sm-flex justify-content-sm-end">
+                                <button class="col form__btn m-0" onclick="saveData();">Lưu</button>
+                            </div>
+                    </div>
+                    <div class="col-lg-2 d-lg-block d-none">
+                        <div class="form__img" style="background-image: url(../img/img_qr.png);"></div>
+                        <button class="form__btn" onclick="saveData();">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="grid">
+                <div class="row footer__top">
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Trung tâm trợ giúp</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">TickID Mall</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Hướng dẫn mua hàng</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Về TickID</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Giới thiệu về TickID Việt Nam</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Tuyển dụng</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Điều khoản TickID</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Theo dõi chúng tôi</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-facebook"></i>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-square-instagram"></i>
+                                        Instagram
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-linkedin"></i>
+                                        LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Ứng dụng</h3>
+                            <img src="../img/img_qr.png" alt="" class="footer__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="grid">
+                    <div class="row">
+                        <p class="footer__text">© 2024-Bản quyền</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- display modal -->
+    <div class="modal" id="modal">
+        <div class="modal-overlay"></div>
+
+        <div class="modal-inner">
+            <!-- form register -->
+            <div class="auth-form auth-form-register">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        <span class="auth-form__switch-btn" onclick="displayNone(); displayLogin();">Đăng nhập</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Nhập email">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__policy">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng ký, bạn đã đồng ý với Shop về
+                            <a href="" class="auth-form__policy-link">Điều khoản dịch vụ </a>&
+                            <a href="" class="auth-form__policy-link">Chính sách bảo mật</a>
+                        </p>
+                    </div>
+
+                    <div class="auth-form__control">
+                        <button class="btn auth-form__control-back" onclick="displayNone();">TRỞ LẠI</button>
+                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="https://www.facebook.com/" class="btn btn--size-s btn--with-icon btn--facebook">
+                        <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
+                        <span class="auth-form__socials-text">Kết nối với Facebook</span>
+                    </a>
+                    <a href="https://www.google.com/" class="btn btn--size-s btn--with-icon btn--google">
+                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                        <span class="auth-form__socials-text">Kết nối với Google</span>
+                    </a>
+                </div>
+            </div>
+        
+            <!-- form login -->
+            <div class="auth-form auth-form-login">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        <span class="auth-form__switch-btn" onclick="displayNone(); displayRegister();">Đăng ký</span>
+                    </div>
+
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="email" class="auth-form__input" id="email" placeholder="Nhập email">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" id="password" placeholder="Nhập mật khẩu">
+                        </div>
+                    </div>
+
+                    <div class="auth-form__policy">
+                        <div class="auth-form__help">
+                            <a href="" class="auth-form__help-link auth-form__forgot">Quên mật khẩu</a>
+                            <span class="auth-form__separate"></span>
+                            <a href="" class="auth-form__help-link auth-form__needed">Cần trợ giúp?</a>
+                        </div>
+                    </div>
+
+                    <div class="auth-form__control">
+                        <button class="btn auth-form__control-back" onclick="displayNone();">TRỞ LẠI</button>
+                        <button class="btn btn--primary" onclick="Login();">ĐĂNG NHẬP</button>
+                    </div>
+                </div>
+
+                <div class="auth-form__socials">
+                    <a href="https://www.facebook.com/" class="btn btn--size-s btn--with-icon btn--facebook">
+                        <i class="auth-form__socials-icon fa-brands fa-facebook"></i>
+                        <span class="auth-form__socials-text">Kết nối với Facebook</span>
+                    </a>
+                    <a href="https://www.google.com/" class="btn btn--size-s btn--with-icon btn--google">
+                        <i class="auth-form__socials-icon fa-brands fa-google"></i>
+                        <span class="auth-form__socials-text">Kết nối với Google</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hiển thị thông báo khi value search rỗng -->
+    <div class="modal-notify">
+        <i class="fa-solid fa-circle-exclamation" class="modal-notify__text"></i>
+        <span class="modal-notify__text">Nhập tên sản phẩm để tìm kiếm</span>
+    </div>
+
+     <!-- Toast Message -->
+    <div id="liveToast">
+        <div class="d-flex">
+            <div class="toast-body" id="toastText">
+                Test Toast Message
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" aria-label="Close"></button>
+        </div>
+    </div>
+</body>
+    <script>
+        $('#signin').blur(function(){
+            var regex=/^[a-zA-Z0-9]+$/;
+            var sigin=$('#signin').val();
+            if(regex.test(sigin)){
+                $("#signin").css("border-color","#00A86B");
+            }
+            else{
+                $("#toastText").text("Tên đăng nhập không hợp lệ");
+                $("#liveToast").css("background-color","#dc3545");
+                $("#liveToast").css("animation","slideInLeft ease 0.5s");
+                $("#liveToast").css("display","block");
+                $("#signin").css("border-color","#dc3545");
+                setTimeout(()=>{
+                    $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+                },600);
+            }
+        });
+
+        $('#name').blur(function(){
+            var regex=/^[A-Z]{1}[a-zA-Z\s]+$/;
+            var name=$("#name").val();
+            if(regex.test(name)){
+                $("#name").css("border-color","#00A86B");
+            }
+            else{
+                $("#toastText").text("Tên bắt đầu ký tự in hoa");
+                $("#liveToast").css("background-color","#dc3545");
+                $("#liveToast").css("animation","slideInLeft ease 0.5s");
+                $("#liveToast").css("display","block");
+                $("#name").css("border-color","#dc3545");
+                setTimeout(()=>{
+                    $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+                },600);
+            }
+        });
+        $('#email__account').blur(function(){
+            var regex=/^[a-zA-Z0-9]+@gmail.com$/;
+            var email= $('#email__account').val();
+            if(regex.test(email)){
+                $("#email__account").css("border-color","#00A86B");
+            }
+            else{
+                $("#toastText").text("Email không hợp lệ");
+                $("#liveToast").css("background-color","#dc3545");
+                $("#liveToast").css("animation","slideInLeft ease 0.5s");
+                $("#liveToast").css("display","block");
+                $("#email__account").css("border-color","#dc3545");
+                setTimeout(()=>{
+                    $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+                },600);
+            }
+        });
+        $('#phone').blur(function(){
+            var regex=/^[0-9]{10}$/
+            var phone= $('#phone').val();
+            if(regex.test(phone)){
+                $("#phone").css("border-color","#00A86B");
+            }
+            else{
+                $("#toastText").text("SĐT không hợp lệ (10 chữ số)");
+                $("#liveToast").css("background-color","#dc3545");
+                $("#liveToast").css("animation","slideInLeft ease 0.5s");
+                $("#liveToast").css("display","block");
+                $("#phone").css("border-color","#dc3545");
+                setTimeout(()=>{
+                    $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+                },600);
+            }
+        });
+
+        var user=localStorage.getItem("username");
+        var data=JSON.parse(user);
+
+        $(".header__item-user-name").text(data.name);
+        $('#signin').val(data.name);
+        if(data.nameUser!=null){
+            $("#name").val(data.nameUser);
+        }
+        $('#email__account').val(data.email);
+        if(data.phone!=null){
+            $("#phone").val(data.phone);
+        }
+        if(data.gender!=null){
+            var radios=$(".radio__active");
+            for(var i=0;i<radios.length;i++){
+               if(radios[i].value==data.gender){
+                radios[i].checked=true;
+                break;
+               }
+            }
+        }
+        if(data.date!=null){
+            $("#date").val(data.date);
+        }
+
+        var gender="";
+        $(".radio__active").change(function(){
+            gender+=$(this).val();
+        })
+
+        function saveData(){
+            var signin=$('#signin').val();
+            var name=$("#name").val();
+            var email=$("#email__account").val();
+            var phone=$("#phone").val();
+            var date=$("#date").val();
+
+            if(signin!="" && name!="" && email!="" && phone!=""){
+                var user=
+                    {
+                        email: $("#email__account").val(),
+                        name: $('#signin').val(),
+                        nameUser:$("#name").val(),
+                        password: data.password,
+                        re_password : data.re_password,
+                        phone: $("#phone").val(),
+                        gender: gender,
+                        date: $("#date").val()
+                    };
+                localStorage.setItem("username",JSON.stringify(user));
+                $(".header__item-user-name").text(signin);
+                $("#toastText").text("Lưu thành công");
+                $("#liveToast").css("background-color","#00A86B");
+                $("#liveToast").css("animation","slideInLeft ease 0.5s");
+                $("#liveToast").css("display","block");
+                setTimeout(()=>{
+                    $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+                },600);
+            }
+            else{
+                $("#toastText").text("Nhập đủ thông tin");
+                $("#liveToast").css("background-color","#dc3545");
+                $("#liveToast").css("animation","slideInLeft ease 0.5s");
+                $("#liveToast").css("display","block");
+                setTimeout(()=>{
+                    $("#liveToast").css("animation","fadeOut linear 1s 2s forwards");
+                },600);
+            }
+        }
+
+         // Hiển thị số lượng trong giỏ hàng
+         if(localStorage.getItem("QtyCart")!=null){
+            var json=localStorage.getItem("QtyCart");
+            var qty=JSON.parse(json);
+            if(qty!=0){
+                document.querySelector(".header__cart-notice").innerText=qty;
+                document.querySelector(".header__cart-notice").style.display="block"; 
+            }
+            else{
+                document.querySelector(".header__cart-list").classList.add("header__cart-list--no-cart");
+                document.querySelector('.header__cart-title').style.display="none"
+                document.querySelector('.header__cart-list-buy').style.display="none"
+                document.querySelector('.header__cart-view').style.display="none"
+            } 
+        }
+        if(document.querySelector(".header__cart-notice").innerText==""){  
+            document.querySelector(".header__cart-list").classList.add("header__cart-list--no-cart");
+            document.querySelector('.header__cart-title').style.display="none"
+            document.querySelector('.header__cart-list-buy').style.display="none"
+            document.querySelector('.header__cart-view').style.display="none"
+        }
+        else{
+            document.querySelector(".header__cart-list").classList.remove('header__cart-list--no-cart');
+            document.querySelector('.header__cart-title').style.display="block"
+            document.querySelector('.header__cart-list-buy').style.display="block"
+            document.querySelector('.header__cart-view').style.display="block"
+        }
+
+        // Hiển thị sản phẩm yêu thích trong thông báo
+        if(localStorage.getItem("favouriteProduct")==null || JSON.parse(localStorage.getItem("favouriteProduct")).length<=0){
+            document.querySelector(".header__notify").classList.add("header__cart-list--no-cart");
+            document.querySelector(".header__notify-title").style.display="none";
+            document.querySelector(".header__notify-list").style.display="none";
+            document.querySelector(".header__notify-footer").style.display="none";
+        }
+        else{
+            document.querySelector(".header__notify").classList.remove("header__cart-list--no-cart");
+            document.querySelector(".header__notify-title").style.display="block";
+            document.querySelector(".header__notify-list").style.display="block";
+            document.querySelector(".header__notify-footer").style.display="flex";
+        }
+
+        // Chuyển sang trang tìm kiếm
+        function pageSearchProduct(){
+            var msgProduct=document.querySelector(".header__search-input").value;
+            if(msgProduct!=""){
+                var msgProducts=null;
+                if(localStorage.getItem("msgSearchProduct")==null){
+                    msgProducts=new Array();
+                }
+                else{
+                    msgProducts=JSON.parse(localStorage.getItem("msgSearchProduct"));
+                }
+    
+                if(msgProduct!=""){
+                    if(msgProducts.length==3){
+                        var tmp=msgProducts[0];
+                        msgProducts[0]=msgProducts[1];
+                        msgProducts[1]=msgProducts[2];
+                        msgProducts[2]=tmp;
+        
+                        msgProducts.pop();
+                    }
+        
+                    msgProducts.push(msgProduct);
+                }
+    
+                
+                localStorage.setItem("msgSearchProduct",JSON.stringify(msgProducts));
+                window.location.href="../html/searchProduct.html";
+            }
+            else{
+                document.querySelector(".modal-notify i").style.color="rgb(239, 33, 33)";
+                var start=setTimeout(function (){
+                    document.querySelector(".modal-notify").style.display="flex";
+                },200);
+                var stop=setTimeout(function (){
+                    clearTimeout(start);
+                    document.querySelector(".modal-notify").style.display="none";
+                },2000);
+            }
+            document.querySelector(".header__search-history").style.display="none";
+        }
+
+        //Hiển thị lịch sử tìm kiếm
+        if(localStorage.getItem("msgSearchProduct")!=null){
+            var msgSearchProductsReverse=JSON.parse(localStorage.getItem("msgSearchProduct")).reverse();
+            var msg=document.querySelector(".header__search-history-list").innerHTML;
+            for(var i=0;i<msgSearchProductsReverse.length;i++){
+                if(msgSearchProductsReverse[i]!=""){
+                    msg+=
+                    `
+                    <li class="header__search-history-item" onclick="valueToSearch('${msgSearchProductsReverse[i]}');">
+                        <a href="#" class="header__search-history-link">
+                            ${msgSearchProductsReverse[i]}
+                        </a>
+                    </li>
+                    `
+                }
+            }
+            document.querySelector(".header__search-history-list").innerHTML=msg;
+        }
+        else{
+            document.querySelector(".header__search-history").style.display="none";
+        }
+        
+        function displaySearchHistory(){
+            document.querySelector(".header__search-history").style.display="block";
+        }
+
+        function valueToSearch(msg){
+           document.querySelector(".header__search-input").value=msg;
+            document.querySelector(".header__search-history").style.display="none";
+        }
+
+    </script>
+    <script src="../js/cart.js"></script>
+</html>

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../font/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/detail.css">
+    <link rel="stylesheet" href="../css/products.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="main__products">
+        <header class="header">
+            <div class="grid" style="background-color: rgb(241, 146, 31);">
+
+                <!-- navigation -->
+                <nav class="header__navbar hide-on-mobile-tablet">
+
+                    <!-- nav top-left -->
+                    <ul class="header__list">
+                        <li class="header__item header__item--separate header__item--qr">
+                            Vào cửa hàng trên ứng dụng
+                            <div class="header__qr">
+                                <img src="../img/img_qr.png" alt="QR" class="header__qr-img">
+                            </div>
+                        </li>
+                        <li class="header__item">
+                            <span class="header__item--nopacity">Kết nối</span>
+                            <a href="https://www.facebook.com/" class="header__navbar-icon">
+                                <i class="fa-brands fa-facebook header__icon-link"></i>
+                            </a>
+                            <a href="https://www.instagram.com/" class="header__navbar-icon">
+                                <i class="fa-brands fa-instagram header__icon-link"></i>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <!-- nav top-right -->
+                    <ul class="header__list">
+                        <li class="header__item header__item--notify">
+                            <a href="" class="header__link">
+                                <i class="fa-solid fa-heart header__icon-link"></i>
+                                Yêu thích
+                            </a>
+
+                            <!-- display notify -->
+                            <!-- header__cart-list--no-cart 
+                                thêm class trên thì sẽ hiển thị giỏ hàng trống
+                            -->
+                            <div class="header__notify">
+                                <img src="../img/no_cart.png" alt="" class="header__no-cart-img">
+                                <p class="header__no-cart-msg">Chưa có sản phẩm</p>
+
+                                <header class="header__notify-title">
+                                    <h3>Sản phẩm yêu thích</h3>
+                                </header>
+                                <ul class="header__notify-list">
+                                </ul>
+                                <footer class="header__notify-footer">
+                                    <a href="../html/favourite.html" class="header__notify-btn">Xem tất cả</a>
+                                </footer>
+                            </div>
+                        </li>
+                        <li class="header__item">
+                            <a href="" class="header__link">
+                                <i class="fa-regular fa-circle-question header__icon-link"></i>
+                                Trợ giúp
+                            </a>
+                        </li>
+
+                        <!-- display user -->
+                        <li class="header__item header__item-user">
+                            <img src="../img/img_qr.png" alt="" class="header__item-user-img">
+                            <span class="header__item-user-name">Cẩm Tú</span>
+
+                            <ul class="header__item-user-menu">
+                                <li class="header__item-user-item">
+                                    <a href="../html/home.html">Trang chủ</a>
+                                </li>
+                                <li class="header__item-user-item">
+                                    <a href="../html/myaccount.html">Tài khoản của tôi </a>
+                                </li>
+                                <li class="header__item-user-item">
+                                    <a href="../html/boughtProduct.html">Đơn mua</a>
+                                </li>
+                                <li class="header__item-user-item">
+                                    <a href="../html/introduce.html">Giới thiệu</a>
+                                </li>
+                                <li class="header__item-user-item">
+                                    <a href="../../index.html">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Search -->
+                <div class="header__with-search">
+                    <label for="mobileSearch" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+
+                    <input type="checkbox" hidden id="mobileSearch">
+
+                    <div class="header__logo hide-on-tablet">
+                        <a href="../html/home.html">
+                            <img src="../img/Logo1_white.png" alt="" class="header__logo-img" height="135px">
+                        </a>
+                    </div>
+
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Tìm kiếm sản phẩm" onclick="displaySearchHistory();">
+                            <div class="header__search-history">
+                                <h3 class="header__search-history-heading">Lịch sử tìm kiếm</h3>
+                                <ul class="header__search-history-list">
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <div class="header__search-select">
+                            <span class="header__search-select-label">Trong shop</span>
+                            <i class="header__search-select-icon fa-solid fa-angle-down"></i>
+                            <ul class="header__search-option">
+                                <li class="header__search-item">
+                                    <span class="header__search-text">Trong shop</span>
+                                    <i class="header__search-icon fa-solid fa-check"></i>
+                                </li>
+                                <li class="header__search-item">
+                                    <span class="header__search-text">Ngoài shop</span>
+                                    <i class="header__search-icon fa-solid fa-check"></i>
+                                </li>
+                            </ul>
+                        </div> -->
+                        <button class="header__search-btn" onclick="pageSearchProduct();">
+                            <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <!-- Display menu on mobile and tablet -->
+                    <div class="header__menu-mobile">
+                        <label for="header__menu-mobile-check">
+                            <i class="fa-solid fa-bars header__menu-mobile-icon"></i>
+                        </label>
+                        <input type="checkbox" hidden id="header__menu-mobile-check">
+
+                        <label for="header__menu-mobile-check" class="header__menu-mobile-over"></label>
+
+                        <div class="header__menu-mobile-list-wrapper">
+                            <label for="header__menu-mobile-check">
+                                <i class="fa-solid fa-xmark header__menu-close-icon"></i>
+                            </label>
+                            <ul class="header__menu-mobile-list">
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/home.html" class="header__menu-mobile-link">Trang chủ</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/myaccount.html" class="header__menu-mobile-link">Tài khoản của tôi</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/introduce.html" class="header__menu-mobile-link">Giới thiệu</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/boughtProduct.html" class="header__menu-mobile-link">Đơn mua</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../html/favourite.html" class="header__menu-mobile-link">Yêu thích</a>
+                                </li>
+                                <li class="header__menu-mobile-item">
+                                    <a href="../../index.html" class="header__menu-mobile-link">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Display sort bar mobile and tablet -->
+            <!-- <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Phổ biến</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Mới nhất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Bán chạy</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Giá</a>
+                </li>
+            </ul> -->
+        </header>
+
+        <div class="container__products">
+            <div class="grid content__products">
+                <div class="row content__product__row">
+                    <div class="col content__product__col content__product__col-check">
+                        <input type="checkbox" class="content__product__input" onclick="checkAll();">
+                        <span class="content__product__title">Chọn Tất Cả</span>
+                    </div>
+                    <div class="col content__product__col content__product__col-desc d-lg-flex d-sm-flex d-none">
+                        <span class="content__product__text">Đơn Giá</span>
+                        <span class="content__product__text">Số Lượng</span>
+                        <span class="content__product__text">Số Tiền</span>
+                        <span class="content__product__text">Thao Tác</span>
+                    </div>
+                </div>
+
+                <div class="content__product-wrapper">
+                    <img src="../img/no_product.png" alt="" class="header__no-cart-img header__no-cart-img--mod">
+                    <p class="header__no-cart-msg header__no-cart-msg--mod">Chưa có sản phẩm</p>
+                </div>
+
+                <div class="row content__product__btn">
+                    <div class="col-lg-9 col-sm-8 col content__product__col content__product__col-btn-text">
+                        <span class="content__product__btn-text">Tổng thanh toán:
+                            <span class="content__product__btn-total">0đ</span>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col content__product__col content__product__col-btn">
+                        <button class="btn btn--primary btn__product" onclick="payment();">Thanh Toán</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="grid">
+                <div class="row footer__top">
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Chăm sóc khách hàng</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Trung tâm trợ giúp</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">TickID Mall</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Hướng dẫn mua hàng</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Về TickID</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Giới thiệu về TickID Việt Nam</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Tuyển dụng</a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">Điều khoản TickID</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Theo dõi chúng tôi</h3>
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-facebook"></i>
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-square-instagram"></i>
+                                        Instagram
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a href="" class="footer__link">
+                                        <i class="footer__icon fa-brands fa-linkedin"></i>
+                                        LinkedIn
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-lg-flex justify-content-lg-center col-sm-6 d-sm-flex justify-content-sm-start col-6 d-flex justify-content-start ">
+                        <div>
+                            <h3 class="footer__heading">Ứng dụng</h3>
+                            <img src="../img/img_qr.png" alt="" class="footer__img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="grid">
+                    <div class="row">
+                        <p class="footer__text">© 2024-Bản quyền</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal-notify">
+            <i class="fa-solid fa-circle-exclamation" class="modal-notify__text" style="color: rgb(239, 33, 33);"></i>
+            <span class="modal-notify__text"></span>
+        </div>
+    </div>
+
+    <!-- Hiển thị thông báo khi value search rỗng -->
+    <div class="modal-notify modal-notify--mod">
+        <i class="fa-solid fa-circle-exclamation" class="modal-notify__text"></i>
+        <span class="modal-notify__text">Nhập tên sản phẩm để tìm kiếm</span>
+    </div>
+
+    <!-- Hiển thị thông báo khi value search không tìm thấy-->
+    <div class="modal-notify modal-notify--noresult">
+        <i class="fa-solid fa-circle-exclamation" class="modal-notify__text"></i>
+        <span class="modal-notify__text">Không tìm thấy sản phẩm</span>
+    </div>
+</body>
+    <script src="../js/products.js"></script>
+    <script>
+        // Thiết lập tên đăng nhập
+        var userName=JSON.parse(localStorage.getItem("username")).name;
+        document.querySelector('.header__item-user-name').innerText=userName;
+        // Tăng giảm số lượng sản phẩm
+        var plus=document.getElementsByClassName("detail-product-item__qty-plus");
+        var minus=document.getElementsByClassName("detail-product-item__qty-minus");
+        var num=document.getElementsByClassName("detail-product-item__qty-num");
+
+        var totalPrice=document.getElementsByClassName("content__product__total");
+        var currentPrice=document.getElementsByClassName("content__product__price");
+        var nameProduct=document.getElementsByClassName("content__product__name-product");
+
+        var json=localStorage.getItem("listProductCart");
+        var data=JSON.parse(json);
+
+
+        function createPlusCallback(i) {
+            return function() {
+                // Reset lại các checkbox
+                var inputs=document.getElementsByClassName('content__product__input');
+                for(var j=0;j<inputs.length;j++){
+                    if(inputs[j].checked){
+                        inputs[j].checked=false;
+                    }
+                }
+                // Reset lại tổng tiền
+                document.querySelector(".content__product__btn-total").innerText="0đ";
+
+                var a = parseInt(num[i].innerText);
+                a++;
+                num[i].innerText = a;
+
+                newTotalPrice= Number(currentPrice[i].innerText.replace(/\D/g,"")) * Number(num[i].innerText);
+                totalPrice[i].innerText=newTotalPrice.toLocaleString("vi-VN")+"đ";
+
+                for(var j=0;j<data.length;j++){
+                    if(data[j].nameProduct==nameProduct[i].innerText){
+                        data[j].qty=num[i].innerText;
+                    }
+                }
+
+                var newJson=JSON.stringify(data);
+                localStorage.setItem("listProductCart",newJson);
+            }
+        }
+
+        function createMinusCallback(i) {
+            return function() {
+                // Reset lại các checkbox
+                var inputs=document.getElementsByClassName('content__product__input');
+                for(var j=0;j<inputs.length;j++){
+                    if(inputs[j].checked){
+                        inputs[j].checked=false;
+                    }
+                }
+                // Reset lại tổng tiền
+                document.querySelector(".content__product__btn-total").innerText="0đ";
+
+                var a = parseInt(num[i].innerText);
+                if (a <= 1) {
+                    num[i].innerText = 1;
+                } else {
+                    a--;
+                    num[i].innerText = a;
+                }
+
+                newTotalPrice= Number(currentPrice[i].innerText.replace(/\D/g,"")) * Number(num[i].innerText);
+                totalPrice[i].innerText=newTotalPrice.toLocaleString("vi-VN")+"đ";
+
+                for(var j=0;j<data.length;j++){
+                    if(data[j].nameProduct==nameProduct[i].innerText){
+                        data[j].qty=num[i].innerText;
+                    }
+                }
+
+                var newJson=JSON.stringify(data);
+                localStorage.setItem("listProductCart",newJson);
+            }
+        }
+
+        for (var i = 0; i < num.length; i++) {
+            plus[i].addEventListener("click", createPlusCallback(i));
+            minus[i].addEventListener("click", createMinusCallback(i));
+        }
+
+        // Lưu sản phẩm xác nhận thanh toán
+        function payment(){
+            var paymentProducts=new Array();
+            var inputs=document.getElementsByClassName("content__product__input");
+            for(var i=1;i<inputs.length;i++){
+                if(inputs[i].checked==true){
+                    paymentProducts.push(inputs[i].id);
+                }
+            }
+            localStorage.setItem("paymentProducts",JSON.stringify(paymentProducts));
+            if(paymentProducts.length<=0){
+                if(inputs[0].checked==false){
+                    document.querySelector(".modal-notify__text").innerText="Chọn sản phẩm để thanh toán";
+                }
+                notifySuccess();
+            }
+            else{
+                window.location.href="../html/payment.html";
+            }
+        }
+
+        // Hiển thị thông báo khi thêm thành công
+        function notifySuccess(){
+            var start=setTimeout(function (){
+                document.querySelector(".modal-notify").style.display="flex";
+            },200);
+            var stop=setTimeout(function (){
+                clearTimeout(start);
+                document.querySelector(".modal-notify").style.display="none";
+            },2000);
+        }
+
+        // Hiển thị sản phẩm yêu thích trong thông báo
+        if(localStorage.getItem("favouriteProduct")==null || JSON.parse(localStorage.getItem("favouriteProduct")).length<=0){
+            document.querySelector(".header__notify").classList.add("header__cart-list--no-cart");
+            document.querySelector(".header__notify-title").style.display="none";
+            document.querySelector(".header__notify-list").style.display="none";
+            document.querySelector(".header__notify-footer").style.display="none";
+        }
+        else{
+            document.querySelector(".header__notify").classList.remove("header__cart-list--no-cart");
+            document.querySelector(".header__notify-title").style.display="block";
+            document.querySelector(".header__notify-list").style.display="block";
+            document.querySelector(".header__notify-footer").style.display="flex";
+        }
+
+        //Hiển thị hình ảnh không có sản phẩm
+        if(localStorage.getItem("listProductCart")==null || JSON.parse(localStorage.getItem("listProductCart")).length<=0){
+            document.querySelector(".content__products").classList.add("header__cart-list--no-cart");
+            document.querySelector(".content__product__row").style.display="none";
+            document.querySelector(".content__product__btn").style.display="none";
+        }
+        else{
+            document.querySelector(".content__products").classList.remove("header__cart-list--no-cart");
+            document.querySelector(".content__product__row").style.display="flex";
+            document.querySelector(".content__product__btn").style.display="flex";
+        }
+
+        //Hiển thị lịch sử tìm kiếm
+        if(localStorage.getItem("msgSearchProduct")!=null){
+            var msgSearchProductsReverse=JSON.parse(localStorage.getItem("msgSearchProduct")).reverse();
+            var msg=document.querySelector(".header__search-history-list").innerHTML;
+            for(var i=0;i<msgSearchProductsReverse.length;i++){
+                if(msgSearchProductsReverse[i]!=""){
+                    msg+=
+                    `
+                    <li class="header__search-history-item" onclick="valueToSearch('${msgSearchProductsReverse[i]}');">
+                        <a href="#" class="header__search-history-link">
+                            ${msgSearchProductsReverse[i]}
+                        </a>
+                    </li>
+                    `
+                }
+            }
+            document.querySelector(".header__search-history-list").innerHTML=msg;
+        }
+        else{
+            document.querySelector(".header__search-history").style.display="none";
+        }
+        
+        function displaySearchHistory(){
+            document.querySelector(".header__search-history").style.display="block";
+        }
+
+        function valueToSearch(msg){
+           document.querySelector(".header__search-input").value=msg;
+            document.querySelector(".header__search-history").style.display="none";
+        }
+
+    </script>
+</html>
